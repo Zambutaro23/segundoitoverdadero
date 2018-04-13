@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var btnLogear:UIButton?
+    @IBOutlet var txtfUsuario:UITextField?
+    @IBOutlet var txtfPass:UITextField?
+    @IBOutlet var txtAConsola:UITextView?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +23,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func accionBotonLogear(){
 
 }
-
+    @IBAction func acccionBotonLogear(){
+        txtAConsola?.text="AUTOMATIZANDO EL MUNDO"
+    }
+}
