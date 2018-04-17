@@ -36,11 +36,11 @@ class ViewController: UIViewController {
         
         self.performSegue(withIdentifier: "tran1",sender: self)
         
-        if txtfUsuario?.text=="yo" && txtfPass?.text=="12345" {
+        if txtfUsuario?.text=="yo" && txtfPass?.text=="123456" {
             self.performSegue(withIdentifier: "tran1",sender: self)
         }
         else{
-            txtAConsola?.text=String(format:"hola usuario:%@ pasword: %@",(txtfUsuario?.text)!,(txtfPass?.text)!)
+            txtAConsola?.text=String(format:"usuario:%@ pasword: %@ no encontrado",(txtfUsuario?.text)!,(txtfPass?.text)!)
             
             
         }
