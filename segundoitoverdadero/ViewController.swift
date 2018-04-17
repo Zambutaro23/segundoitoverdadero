@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var txtfUsuario:UITextField?
     @IBOutlet var txtfPass:UITextField?
     @IBOutlet var txtAConsola:UITextView?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +30,19 @@ class ViewController: UIViewController {
 
 }
     @IBAction func acccionBotonLogear(){
-        txtAConsola?.text="AUTOMATIZANDO EL MUNDO"
-    }
+        //txtAConsola?.text="AUTOMATIZANDO EL MUNDO"
+        //txtAConsola?.text=String(format:"hola usuario:%@ pasword: %@",(txtfUsuario?.text)!,
+                                  //(txtfPass?.text)!)
+        
+        self.performSegue(withIdentifier: "tran1",sender: self)
+        
+        if txtfUsuario?.text=="yo" && txtfPass?.text=="12345" {
+            self.performSegue(withIdentifier: "tran1",sender: self)
+        }
+        else{
+            txtAConsola?.text=String(format:"hola usuario:%@ pasword: %@",(txtfUsuario?.text)!,(txtfPass?.text)!)
+            
+            
+        }
+}
 }

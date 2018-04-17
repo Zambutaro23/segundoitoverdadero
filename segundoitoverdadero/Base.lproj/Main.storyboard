@@ -87,6 +87,7 @@
                         <outlet property="txtAConsola" destination="cCi-2l-DA8" id="MrQ-4q-yAg"/>
                         <outlet property="txtfPass" destination="pw3-UQ-GLj" id="EfA-Mh-uDB"/>
                         <outlet property="txtfUsuario" destination="mic-zH-isz" id="Ap8-cY-Jj7"/>
+                        <segue destination="r3g-ek-065" kind="show" identifier="tran1" id="xL0-AE-FlD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
