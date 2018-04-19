@@ -29,7 +29,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)-> UITableViewCell {
         let cell:TVCMiCelda=tableView.dequeueReusableCell(withIdentifier: "micelda1") as!TVCMiCelda
        // cell.lblNombre?.text="Yony"
-             if(indexPath.row==0){
+        if(indexPath.row==0){
             cell.lblNombre?.text="Yony"
         }
         else if(indexPath.row==1){

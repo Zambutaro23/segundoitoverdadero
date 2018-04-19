@@ -10,7 +10,10 @@
 		C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8920863F9800DBF05F /* VCRegistrer.swift */; };
 		C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8B2086488100DBF05F /* VCPrincipal.swift */; };
 		C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */; };
-		C711DC91208680AE00DBF05F /* VCColeccionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC90208680AE00DBF05F /* VCColeccionTableViewController.swift */; };
+		C75059C320879F9900EEA507 /* VCColeccionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C220879F9900EEA507 /* VCColeccionViewController.swift */; };
+		C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C42087B36700EEA507 /* CVCMiCelda2.swift */; };
+		C75059C72087CDF400EEA507 /* potenciar-cerebro_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */; };
+		C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C82087D3E000EEA507 /* DataHolder.swift */; };
 		C76D31532080FD4700CAFC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D31522080FD4700CAFC05 /* AppDelegate.swift */; };
 		C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D31542080FD4700CAFC05 /* ViewController.swift */; };
 		C76D31582080FD4700CAFC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76D31562080FD4700CAFC05 /* Main.storyboard */; };
@@ -41,7 +44,10 @@
 		C711DC8920863F9800DBF05F /* VCRegistrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistrer.swift; sourceTree = "<group>"; };
 		C711DC8B2086488100DBF05F /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
-		C711DC90208680AE00DBF05F /* VCColeccionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccionTableViewController.swift; sourceTree = "<group>"; };
+		C75059C220879F9900EEA507 /* VCColeccionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccionViewController.swift; sourceTree = "<group>"; };
+		C75059C42087B36700EEA507 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
+		C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "potenciar-cerebro_0.jpg"; sourceTree = SOURCE_ROOT; };
+		C75059C82087D3E000EEA507 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		C76D314F2080FD4700CAFC05 /* segundoitoverdadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = segundoitoverdadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76D31522080FD4700CAFC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C76D31542080FD4700CAFC05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		C76D31512080FD4700CAFC05 /* segundoitoverdadero */ = {
 			isa = PBXGroup;
 			children = (
+				C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */,
 				C76D31522080FD4700CAFC05 /* AppDelegate.swift */,
 				C76D31542080FD4700CAFC05 /* ViewController.swift */,
 				C76D31562080FD4700CAFC05 /* Main.storyboard */,
@@ -114,7 +121,9 @@
 				C711DC8920863F9800DBF05F /* VCRegistrer.swift */,
 				C711DC8B2086488100DBF05F /* VCPrincipal.swift */,
 				C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */,
-				C711DC90208680AE00DBF05F /* VCColeccionTableViewController.swift */,
+				C75059C220879F9900EEA507 /* VCColeccionViewController.swift */,
+				C75059C42087B36700EEA507 /* CVCMiCelda2.swift */,
+				C75059C82087D3E000EEA507 /* DataHolder.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C76D315D2080FD4700CAFC05 /* LaunchScreen.storyboard in Resources */,
+				C75059C72087CDF400EEA507 /* potenciar-cerebro_0.jpg in Resources */,
 				C76D315A2080FD4700CAFC05 /* Assets.xcassets in Resources */,
 				C76D31582080FD4700CAFC05 /* Main.storyboard in Resources */,
 			);
@@ -271,10 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C711DC91208680AE00DBF05F /* VCColeccionTableViewController.swift in Sources */,
 				C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */,
+				C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */,
 				C76D31532080FD4700CAFC05 /* AppDelegate.swift in Sources */,
+				C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */,
 				C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */,
+				C75059C320879F9900EEA507 /* VCColeccionViewController.swift in Sources */,
 				C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */,
 				C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */,
 			);
