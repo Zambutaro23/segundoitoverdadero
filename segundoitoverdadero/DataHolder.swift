@@ -7,11 +7,15 @@
 //
 
 import UIKit
-
+import Firebase
 class DataHolder: NSObject {
     
     static let sharedInstance:DataHolder=DataHolder()
     var numeroCeldasColeccion:UInt=20;
+    
+    func initFireBase(){
+        FirebaseApp.configure()
+    }
     
     func nombreDeCelda(numero:Int)->NSString {
         if(numero==0){
