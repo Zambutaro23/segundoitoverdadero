@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yDM-SP-yKD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rst-tk-md4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -304,9 +304,33 @@
             </objects>
             <point key="canvasLocation" x="1093.5999999999999" y="927.88605697151434"/>
         </scene>
+        <!--Mapa-->
+        <scene sceneID="leX-h0-owx">
+            <objects>
+                <viewController id="Rst-tk-md4" customClass="VCMapa" customModule="segundoitoverdadero" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jlc-JZ-UNG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ven-wV-coH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lfx-sm-SXm"/>
+                    </view>
+                    <connections>
+                        <outlet property="MiMapa" destination="Ven-wV-coH" id="Rna-2U-DvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1K-gY-cFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925.5999999999999" y="894.60269865067471"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vmc-4V-oB6"/>
+        <segue reference="CRd-jn-9To"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.057371734812552644" blue="0.049410852932477378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -8,13 +8,19 @@
 
 import UIKit
 import Firebase
+import QuickLook
 class DataHolder: NSObject {
     
     static let sharedInstance:DataHolder=DataHolder()
     var numeroCeldasColeccion:UInt=20;
+    var locationAdmin:LocationAdmin?
     
     func initFireBase(){
         FirebaseApp.configure()
+    }
+    
+    func initLocationAdmin(){
+        locationAdmin=LocationAdmin()
     }
     
     func nombreDeCelda(numero:Int)->NSString {

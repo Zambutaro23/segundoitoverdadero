@@ -17,6 +17,9 @@
 		C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C42087B36700EEA507 /* CVCMiCelda2.swift */; };
 		C75059C72087CDF400EEA507 /* potenciar-cerebro_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */; };
 		C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C82087D3E000EEA507 /* DataHolder.swift */; };
+		C7669D14208A1458002F2EF2 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7669D13208A1458002F2EF2 /* LocationAdmin.swift */; };
+		C7669D16208A3747002F2EF2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7669D15208A3747002F2EF2 /* MapKit.framework */; };
+		C7669D18208A3805002F2EF2 /* VCMapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7669D17208A3805002F2EF2 /* VCMapa.swift */; };
 		C76D31532080FD4700CAFC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D31522080FD4700CAFC05 /* AppDelegate.swift */; };
 		C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D31542080FD4700CAFC05 /* ViewController.swift */; };
 		C76D31582080FD4700CAFC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76D31562080FD4700CAFC05 /* Main.storyboard */; };
@@ -61,6 +64,9 @@
 		C75059C42087B36700EEA507 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "potenciar-cerebro_0.jpg"; sourceTree = SOURCE_ROOT; };
 		C75059C82087D3E000EEA507 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
+		C7669D13208A1458002F2EF2 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
+		C7669D15208A3747002F2EF2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C7669D17208A3805002F2EF2 /* VCMapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapa.swift; sourceTree = "<group>"; };
 		C76D314F2080FD4700CAFC05 /* segundoitoverdadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = segundoitoverdadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76D31522080FD4700CAFC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C76D31542080FD4700CAFC05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7669D16208A3747002F2EF2 /* MapKit.framework in Frameworks */,
 				17E87228E06BE4A6F1799BF4 /* Pods_segundoitoverdadero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +128,7 @@
 		264BBBE3032989983CB81859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7669D15208A3747002F2EF2 /* MapKit.framework */,
 				2B29493C9489597CE6EE91D5 /* Pods_segundoitoverdadero.framework */,
 				0C9A72A8A26E0DAEEF5F39CA /* Pods_segundoitoverdaderoTests.framework */,
 				76E62AAF6DCE2296B647B437 /* Pods_segundoitoverdaderoUITests.framework */,
@@ -167,6 +175,8 @@
 				C75059C220879F9900EEA507 /* VCColeccionViewController.swift */,
 				C75059C42087B36700EEA507 /* CVCMiCelda2.swift */,
 				C75059C82087D3E000EEA507 /* DataHolder.swift */,
+				C7669D13208A1458002F2EF2 /* LocationAdmin.swift */,
+				C7669D17208A3805002F2EF2 /* VCMapa.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -267,6 +277,11 @@
 					C76D314E2080FD4700CAFC05 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C76D31622080FD4700CAFC05 = {
 						CreatedOnToolsVersion = 9.2;
@@ -489,7 +504,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */,
+				C7669D18208A3805002F2EF2 /* VCMapa.swift in Sources */,
 				C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */,
+				C7669D14208A1458002F2EF2 /* LocationAdmin.swift in Sources */,
 				C76D31532080FD4700CAFC05 /* AppDelegate.swift in Sources */,
 				C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */,
 				C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */,

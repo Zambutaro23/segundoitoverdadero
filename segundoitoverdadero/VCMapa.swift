@@ -7,21 +7,55 @@
 //
 
 import UIKit
+import MapKit
 
-class VCMapa: UIViewController {
 
+class VCMapa: UIViewController,MKMapViewDelegate {
+
+    
+    @IBOutlet var MiMapa:MKMapView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+          MiMapa?.showsUserLocation=true
+       // MiMapa?.delegate=self
+        
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        var coordTemp: CLLocationCoordinate2D = CLLocationCoordinate2D()
+        coordTemp.latitude = 40.4165000
+        coordTemp.longitude = -3.7025600
+        agregarPin(coordenada: coordTemp, titulo:"PIN1")
     }
     
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func agregarPin(coordenada:CLLocationCoordinate2D, titulo vartTitulo:String){
+        let annotation:MKPointAnnotation=MKPointAnnotation()
+        annotation.coordinate = coordenada
+        annotation.title = vartTitulo
+        MiMapa?.addAnnotation(annotation)
+    }
+    
+    
+    
+    func centralizarEnPosicion(coordenada:CLLocationCoordinate2D){
+        
+        
+        let region:MKCoordinateRegion=MKCoordinateRegion(center:coordenada,span:MKCoordinateSpan(latitudeDelta:0.01,longitudeDelta:0.01))
+        MiMapa?.setRegion(region, animated: true)
+    }
+    
+    
+    func mapView(_mapView: MKMapView,dibujate userLocation: MKUserLocation){
+        centralizarEnPosicion(coordenada: userLocation.coordinate)
+            }
     /*
     // MARK: - Navigation
 
