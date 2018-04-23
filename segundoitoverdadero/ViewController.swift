@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class ViewController: UIViewController {
     
     @IBOutlet var btnLogear:UIButton?
@@ -28,22 +28,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func accionBotonLogear(){
-
-}
-    @IBAction func acccionBotonLogear(){
-        //txtAConsola?.text="AUTOMATIZANDO EL MUNDO"
-        //txtAConsola?.text=String(format:"hola usuario:%@ pasword: %@",(txtfUsuario?.text)!,
-                                  //(txtfPass?.text)!)
         
-        self.performSegue(withIdentifier: "tran1",sender: self)
-        
-        if txtfUsuario?.text=="yo" && txtfPass?.text=="123456" {
-            self.performSegue(withIdentifier: "tran1",sender: self)
-        }
-        else{
-            txtAConsola?.text=String(format:"usuario:%@ pasword: %@ no encontrado",(txtfUsuario?.text)!,(txtfPass?.text)!)
-            
-            
-        }
 }
+   
 }
