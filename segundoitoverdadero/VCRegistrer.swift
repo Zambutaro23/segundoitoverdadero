@@ -35,7 +35,7 @@ class VCRegistrer: UIViewController {
             if(error==nil){
                 self.performSegue(withIdentifier: "trregistro", sender: self)
             }else{
-                print("ERROR EN REGISTRO",error)
+                print("ERROR EN REGISTRO",error!)
             }
                 
             
