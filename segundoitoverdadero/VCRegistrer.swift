@@ -28,7 +28,8 @@ class VCRegistrer: UIViewController {
     }
     
     @IBAction func acccionBotonRegistrar(){
-        
+        DataHolder.sharedInstance.miperfil.txtfEmail=txtfEmail
+        DataHolder.sharedInstance.miperfil.txtfPass=txtfPass
         
         Auth.auth().createUser(withEmail: (txtfEmail?.text)!,password: (txtfPass?.text)!){ (user,error) in
             

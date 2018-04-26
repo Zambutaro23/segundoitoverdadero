@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17E87228E06BE4A6F1799BF4 /* Pods_segundoitoverdadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B29493C9489597CE6EE91D5 /* Pods_segundoitoverdadero.framework */; };
+		C7086E0B208FBCA20005B4FE /* miPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7086E0A208FBCA20005B4FE /* miPerfil.swift */; };
 		C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8920863F9800DBF05F /* VCRegistrer.swift */; };
 		C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8B2086488100DBF05F /* VCPrincipal.swift */; };
 		C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */; };
@@ -49,6 +50,7 @@
 		76E62AAF6DCE2296B647B437 /* Pods_segundoitoverdaderoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_segundoitoverdaderoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695061AB3D9D75B7CFEFBFB /* Pods-segundoitoverdadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-segundoitoverdadero.release.xcconfig"; path = "Pods/Target Support Files/Pods-segundoitoverdadero/Pods-segundoitoverdadero.release.xcconfig"; sourceTree = "<group>"; };
 		A5294C741A29637440E28F1A /* Pods-segundoitoverdadero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-segundoitoverdadero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-segundoitoverdadero/Pods-segundoitoverdadero.debug.xcconfig"; sourceTree = "<group>"; };
+		C7086E0A208FBCA20005B4FE /* miPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miPerfil.swift; sourceTree = "<group>"; };
 		C711DC8920863F9800DBF05F /* VCRegistrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistrer.swift; sourceTree = "<group>"; };
 		C711DC8B2086488100DBF05F /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				C75059C82087D3E000EEA507 /* DataHolder.swift */,
 				C7669D13208A1458002F2EF2 /* LocationAdmin.swift */,
 				C7669D17208A3805002F2EF2 /* VCMapa.swift */,
+				C7086E0A208FBCA20005B4FE /* miPerfil.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -341,17 +344,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-segundoitoverdadero/Pods-segundoitoverdadero-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -368,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */,
+				C7086E0B208FBCA20005B4FE /* miPerfil.swift in Sources */,
 				C7669D18208A3805002F2EF2 /* VCMapa.swift in Sources */,
 				C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */,
 				C7669D14208A1458002F2EF2 /* LocationAdmin.swift in Sources */,

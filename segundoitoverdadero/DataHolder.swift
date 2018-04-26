@@ -17,7 +17,14 @@ class DataHolder: NSObject {
     var numeroCeldasColeccion:UInt=20;
     var locationAdmin:LocationAdmin?
     var firDataBaseRef:DatabaseReference!
+    var fireStoreDB:Firestore?
+    var sNick:String="Yony"
+    var miperfil:miPerfil = miPerfil()
     //var arCoches:Array<Coche>?
+    
+    //Esto es de la clase para el tercer ito.
+    
+    
     
     func initFireBase(){
         FirebaseApp.configure()

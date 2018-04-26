@@ -9,5 +9,8 @@
 import UIKit
 
 class miPerfil: NSObject {
-
+    
+    var txtfEmail:UITextField?
+    var txtfPass:UITextField?
+    
 }

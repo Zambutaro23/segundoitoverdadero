@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var txtfUsuario:UITextField?
     @IBOutlet var txtfPass:UITextField?
     @IBOutlet var txtAConsola:UITextView?
-    
+    @IBOutlet var txtfEmail:UITextView?
    //ddddddd
     
     override func viewDidLoad() {
@@ -28,7 +28,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func accionBotonLogear(){
-        
-}
-   
-}
+        Auth.auth().signIn(withEmail: (txtfEmail?.text)!,password: (txtfPass?.text)!){ (user,error) in
+            if(error==nil){
+                self.performSegue(withIdentifier: "trregistro", sender: self)
+            }else{
+                print("ERROR EN REGISTRO",error!)
+            }
+            
+            
+        }         }
+     }
+
