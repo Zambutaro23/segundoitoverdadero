@@ -8,11 +8,16 @@
 
 import UIKit
 
+
 @UIApplicationMain
+
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var numero:UInt=20
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

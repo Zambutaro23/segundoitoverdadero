@@ -23,6 +23,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
         super.viewDidLoad()
         
         DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value,with:{ (snapshot) in
+            var arTemp=snapshot.value as? Array<AnyObject>
+            let coche0=arTemp?[0] as? [String:AnyObject]
             print("Lo descargado es:", snapshot.value)
             
         })
