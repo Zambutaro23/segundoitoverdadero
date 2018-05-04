@@ -20,7 +20,7 @@ class DataHolder: NSObject {
     var fireStoreDB:Firestore?
     var sNick:String="Yony"
     var miperfil:miPerfil = miPerfil()
-    //var arCoches:Array<Coche>?
+    var arCoches:Array<Coche>?
     
     //Esto es de la clase para el tercer ito.
     
