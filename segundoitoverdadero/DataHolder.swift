@@ -22,6 +22,8 @@ class DataHolder: NSObject {
     var miperfil:miPerfil = miPerfil()
     var arCoches:Array<Coche>?
     
+    var delegate:DataHolderDelegate?
+    
     //Esto es de la clase para el tercer ito.
     
     
@@ -33,6 +35,10 @@ class DataHolder: NSObject {
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
+    }
+    
+    func statusDataholder(){
+        
     }
     
     func nombreDeCelda(numero:Int)->NSString {
@@ -63,6 +69,9 @@ class DataHolder: NSObject {
         
         return ""
     }
-
+}
+@objc protocol DataHolderDelegate{
+    @objc optional func pruebaDataHolder(status:Int)
 
 }
+
