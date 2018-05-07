@@ -10,7 +10,21 @@ import UIKit
 
 class CVCMiCelda2: UICollectionViewCell {
     
-    @IBOutlet var imgvMain:UIImageView?
-    @IBOutlet var lblNombre:UILabel?
+    
+    
+     @IBOutlet var lblNombre:UILabel?
+    @IBOutlet var imgMain:UIImageView?
+
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //Intializacion code
+    }
+    
+   
+    
+    
+
+    
     
 }

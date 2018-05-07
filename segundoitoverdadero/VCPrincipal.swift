@@ -11,20 +11,14 @@ import Firebase
 import FirebaseDatabase
 
 
-class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
+class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,DataHolderDelegate{
 
-    
-   
-    
     
     @IBOutlet var tbMiTableView:UITableView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value,with:{ (snapshot) in
             let arTemp=snapshot.value as? Array<AnyObject>
@@ -46,9 +40,13 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
            
                 // let postDict = snapshot.value as? [String:AnyObject]??[:]
                 
-        
+        DataHolder.sharedInstance.statusDataholder(delegate: self)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func dataHolderPruebaDataHolder(status: Int) {
+        print("*----->>>>>*",status)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,10 +61,11 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
         }
         
         else{
-        return (DataHolder.sharedInstance.arCoches?.count)!
+            return (DataHolder.sharedInstance.arCoches?.count)!
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)-> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TVCMiCelda=tableView.dequeueReusableCell(withIdentifier: "micelda1") as!TVCMiCelda
         
         let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
@@ -113,5 +112,6 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource{
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
