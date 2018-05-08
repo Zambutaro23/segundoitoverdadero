@@ -23,7 +23,7 @@ class DataHolder: NSObject {
     var miperfil:miPerfil = miPerfil()
     var arCoches:Array<Coche>?
     var firStorage:Storage?
-    var storageRef:StorageReference?
+    
     
     
     //var delegate:DataHolderDelegate?
@@ -36,7 +36,8 @@ class DataHolder: NSObject {
         FirebaseApp.configure()
         firDataBaseRef=Database.database().reference().child("SwiftTutorial")
         firStorage = Storage.storage()
-        firStorageRef = StorageReference.reference()
+        fireStoreDB = Firestore.firestore()
+        
         
     }
     

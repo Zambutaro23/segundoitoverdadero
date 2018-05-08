@@ -11,8 +11,8 @@ import FirebaseAuth
 
 class VCRegistrer: UIViewController {
     
-    @IBOutlet var txtfEmail:UITextField?
-    @IBOutlet var txtfPass:UITextField?
+    @IBOutlet var txtEmail:UITextField?
+    @IBOutlet var txtPass:UITextField?
     
 
     override func viewDidLoad() {
@@ -28,13 +28,18 @@ class VCRegistrer: UIViewController {
     }
     
     @IBAction func acccionBotonRegistrar(){
-        DataHolder.sharedInstance.miperfil.txtfEmail=txtfEmail
-        DataHolder.sharedInstance.miperfil.txtfPass=txtfPass
+        print("Hey que tal!!")+(txtUser?.tex)!;)
+        Auth.auth().signIn(whithEmail: (texUser?.text))!,password: textPass?.text) { (user,error) in if user document != nil{
+            
+            }
+            
         
-        Auth.auth().createUser(withEmail: (txtfEmail?.text)!,password: (txtfPass?.text)!){ (user,error) in
+        
+        
             
             if(error==nil){
-                self.performSegue(withIdentifier: "trregistro", sender: self)
+                //self.performSegue(withIdentifier: "trregistro", sender: self)
+                
             }else{
                 print("ERROR EN REGISTRO",error!)
             }

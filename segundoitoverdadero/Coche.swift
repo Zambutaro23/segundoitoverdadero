@@ -23,7 +23,7 @@ class Coche: NSObject {
         iFabricacion=valores["Fabricados"] as? Int
         bdLat=valores["lat"] as? Double
         bdLon=valores["lon"] as? Double
-        sRutaImagenP=valores["RutaImagen"] as? String
+        sRutaImagenP=valores["RutaImagenP"] as? String
         
     }
 }
