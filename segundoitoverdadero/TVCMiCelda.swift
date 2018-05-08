@@ -10,6 +10,7 @@ import UIKit
 
 class TVCMiCelda: UITableViewCell {
     @IBOutlet var lblNombre:UILabel?
+    @IBOutlet var imgvIPrincipal: UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()

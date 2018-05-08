@@ -127,6 +127,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imgvIPrincipal" destination="VjU-kO-ujz" id="1T8-Au-HpW"/>
                                             <outlet property="lbNombre" destination="Th9-Jx-Gzd" id="YL4-CY-fgQ"/>
                                         </connections>
                                     </tableViewCell>

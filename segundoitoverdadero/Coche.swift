@@ -15,6 +15,7 @@ class Coche: NSObject {
     var iFabricacion:Int?
     var bdLon:Double?
     var bdLat:Double?
+    var sRutaImagenP:String?
     
     init (valores:[String:AnyObject]){
         sNombre=valores["Nombre"] as?   String
@@ -22,7 +23,7 @@ class Coche: NSObject {
         iFabricacion=valores["Fabricados"] as? Int
         bdLat=valores["lat"] as? Double
         bdLon=valores["lon"] as? Double
-        
+        sRutaImagenP=valores["RutaImagen"] as? String
         
     }
 }

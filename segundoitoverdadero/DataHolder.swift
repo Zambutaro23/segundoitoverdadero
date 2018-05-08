@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 //import QuickLook
 import FirebaseDatabase
+import FirebaseStorage
 
 class DataHolder: NSObject {
     
@@ -21,6 +22,9 @@ class DataHolder: NSObject {
     var sNick:String="Yony"
     var miperfil:miPerfil = miPerfil()
     var arCoches:Array<Coche>?
+    var firStorage:Storage?
+    var storageRef:StorageReference?
+    
     
     //var delegate:DataHolderDelegate?
     
@@ -30,7 +34,10 @@ class DataHolder: NSObject {
     
     func initFireBase(){
         FirebaseApp.configure()
-        firDataBaseRef=Database.database().reference()
+        firDataBaseRef=Database.database().reference().child("SwiftTutorial")
+        firStorage = Storage.storage()
+        firStorageRef = StorageReference.reference()
+        
     }
     
     func initLocationAdmin(){

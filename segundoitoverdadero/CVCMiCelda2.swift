@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class CVCMiCelda2: UICollectionViewCell {
     
@@ -20,11 +21,23 @@ class CVCMiCelda2: UICollectionViewCell {
         super.awakeFromNib()
         //Intializacion code
     }
+    func descargarImagen(ruta:String){
+    //Create a referencia to the file you want to dowload
+   let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
     
-   
     
+    islandRef?.data(withMaxSize:1*1024*1024){ data,error in
+    if let error! = error{
     
+    }else{
+    let image=UIImage(data:data!)
+        self.imgvPrincipal?.image=image
+        
+        
+          }
+    
+        }
+    }
 
-    
     
 }
