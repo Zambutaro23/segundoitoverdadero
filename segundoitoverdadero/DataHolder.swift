@@ -38,12 +38,19 @@ class DataHolder: NSObject {
         firDataBaseRef=Database.database().reference().child("SwiftTutorial")
         firStorage = Storage.storage()
         fireStoreDB = Firestore.firestore()
+        firStorageRef = firStorage?.reference()
+        
         
         
     }
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
+        
+        
+        
+        
+        
     }
     
     func statusDataholder(delegate:DataHolderDelegate){

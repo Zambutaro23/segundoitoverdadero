@@ -19,6 +19,8 @@ class CVCMiCelda2: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         //Intializacion code
     }
     func descargarImagen(ruta:String){
@@ -31,8 +33,8 @@ class CVCMiCelda2: UICollectionViewCell {
     
     }else{
     let image=UIImage(data:data!)
-        self.imgvPrincipal?.image=image
         
+        self.imgvPrincipal?.image=image
         
           }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class TVCMiCelda: UITableViewCell {
     @IBOutlet var lblNombre:UILabel?
@@ -25,7 +26,14 @@ class TVCMiCelda: UITableViewCell {
         // Configure the view for the selected state
         
         func descargarImagen(ruta:String){
-            let islandRef = DataHolder.sharedInstance.firStorageReference?.Storage.child(ruta)
+            self.imgvIPrincipal?.image=nil
+            let islandRef = DataHolder.sharedInstance.firDataBaseRef?.child(ruta)
+            islandRef?.data(withMaxSize: 1 * 1024 * 1024){
+                data,error in
+                if error != nil {
+                    
+                }
+            }
             
         }
         
