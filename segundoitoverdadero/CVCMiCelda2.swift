@@ -23,10 +23,10 @@ class CVCMiCelda2: UICollectionViewCell {
     }
     func descargarImagen(ruta:String){
     //Create a referencia to the file you want to dowload
-   let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
+        let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
     
     
-    islandRef?.data(withMaxSize:1*1024*1024){ data,error in
+    islandRef.data(withMaxSize:1*1024*1024){ data,error in
     if let error! = error{
     
     }else{

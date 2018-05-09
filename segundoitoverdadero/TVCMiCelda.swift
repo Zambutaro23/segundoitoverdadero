@@ -25,7 +25,7 @@ class TVCMiCelda: UITableViewCell {
         // Configure the view for the selected state
         
         func descargarImagen(ruta:String){
-            let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
+            let islandRef = DataHolder.sharedInstance.firStorageReference?.Storage.child(ruta)
             
         }
         

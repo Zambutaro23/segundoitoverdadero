@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet var txtfEmail:UITextView?
    //ddddddd
     
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

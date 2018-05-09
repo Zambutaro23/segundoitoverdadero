@@ -28,30 +28,27 @@ class VCRegistrer: UIViewController {
     }
     
     @IBAction func acccionBotonRegistrar(){
-        print("Hey que tal!!")+(txtUser?.tex)!;)
-        Auth.auth().signIn(whithEmail: (texUser?.text))!,password: textPass?.text) { (user,error) in if user document != nil{
-            
-            }
-            
+        DataHolder.sharedInstance.miperfil.sNombre = "Yony"
+        DataHolder.sharedInstance.miperfil.sApellido = "BM"
+        DataHolder.sharedInstance.miperfil.iFecha = 1600
+        DataHolder.sharedInstance.miperfil.iAltura = 184
         
-        
-        
-            
-            if(error==nil){
+        Auth.auth().createUser(withEmail: (txtEmail?.text)!, password: (txtPass?.text)!) { (user, error) in
+            if(error == nil){
                 //self.performSegue(withIdentifier: "trregistro", sender: self)
+                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miperfil.getMap())
+                self.performSegue(withIdentifier: "trtegistro", sender: self)
                 
-            }else{
+            }
+            else{
                 print("ERROR EN REGISTRO",error!)
             }
-                
-            
         }
+       
         
-        self.performSegue(withIdentifier: "trtegistro", sender: self)
+    }         
         
-                }
-        
-    }
+}
     
 
 

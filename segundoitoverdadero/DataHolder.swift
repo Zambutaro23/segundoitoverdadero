@@ -23,6 +23,7 @@ class DataHolder: NSObject {
     var miperfil:miPerfil = miPerfil()
     var arCoches:Array<Coche>?
     var firStorage:Storage?
+    var  firStorageRef:StorageReference?
     
     
     
