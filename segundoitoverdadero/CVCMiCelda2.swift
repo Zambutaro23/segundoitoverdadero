@@ -28,13 +28,12 @@ class CVCMiCelda2: UICollectionViewCell {
         let islandRef = DataHolder.sharedInstance.firStorageRef?.child(ruta)
     
     
-    islandRef.data(withMaxSize:1*1024*1024){ data,error in
-    if let error! = error{
+        islandRef?.getData(maxSize:1*1024*1024){ data,error in
+            if case let error! = error{
     
-    }else{
-    let image=UIImage(data:data!)
-        
-        self.imgvPrincipal?.image=image
+            }else{
+                let image=UIImage(data:data!)
+                self.imgvPrincipal?.image=image
         
           }
     

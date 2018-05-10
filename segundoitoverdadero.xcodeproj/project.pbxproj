@@ -26,6 +26,7 @@
 		C76D31582080FD4700CAFC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76D31562080FD4700CAFC05 /* Main.storyboard */; };
 		C76D315A2080FD4700CAFC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C76D31592080FD4700CAFC05 /* Assets.xcassets */; };
 		C76D315D2080FD4700CAFC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76D315B2080FD4700CAFC05 /* LaunchScreen.storyboard */; };
+		C7F4990D20A49803004BB274 /* Cyty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4990C20A49803004BB274 /* Cyty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C76D315E2080FD4700CAFC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C76D31632080FD4700CAFC05 /* segundoitoverdaderoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = segundoitoverdaderoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76D316E2080FD4700CAFC05 /* segundoitoverdaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = segundoitoverdaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7F4990C20A49803004BB274 /* Cyty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				C7669D17208A3805002F2EF2 /* VCMapa.swift */,
 				C7086E0A208FBCA20005B4FE /* miPerfil.swift */,
 				C75EA8FD209B988500C9C09D /* Coche.swift */,
+				C7F4990C20A49803004BB274 /* Cyty.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				C76D31532080FD4700CAFC05 /* AppDelegate.swift in Sources */,
 				C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */,
 				C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */,
+				C7F4990D20A49803004BB274 /* Cyty.swift in Sources */,
 				C75059C320879F9900EEA507 /* VCColeccionViewController.swift in Sources */,
 				C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */,
 				C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */,
