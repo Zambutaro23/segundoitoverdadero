@@ -34,7 +34,7 @@ class DataHolder: NSObject {
     
     
     func initFireBase(){
-        FirebaseApp.configure()
+        FirebaseApp.configure()//me quede en este paso.
         firDataBaseRef=Database.database().reference().child("SwiftTutorial")
         firStorage = Storage.storage()
         fireStoreDB = Firestore.firestore()
