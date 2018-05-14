@@ -15,6 +15,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
 
     
     @IBOutlet var tbMiTableView:UITableView?
+    var arCochei: [Coche] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,21 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
            
                 // let postDict = snapshot.value as? [String:AnyObject]??[:]
                 
-        DataHolder.sharedInstance.statusDataholder(delegate: self)
+        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments(){(querySnapshot,err) in
+            if let err = err {
+                print ("Error getting documents: \(err)")
+            }else {
+                for document in querySnapshot!.documents {
+                    let coche:Coche=Coche
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+            
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -54,9 +69,10 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ")
         
         if(DataHolder.sharedInstance.arCoches==nil){
-            return 0
+            return 5
             
         }
         
@@ -73,9 +89,9 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         
         
         
-        
-       // cell.lblNombre?.text="Yony"
-        /*if(indexPath.row==0){
+        /*
+        cell.lblNombre?.text="Yony"
+        if(indexPath.row==0){
             cell.lblNombre?.text="Yony"
         }
         else if(indexPath.row==1){
@@ -103,7 +119,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         print("He deseleccionado la posicion:",indexPath.row);
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -111,7 +127,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 
 }
