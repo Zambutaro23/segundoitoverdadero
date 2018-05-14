@@ -46,14 +46,21 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
                 print ("Error getting documents: \(err)")
             }else {
                 for document in querySnapshot!.documents {
-                    let coche:Coche=Coche
-                    
+                    let coche:Coche=Coche (valores: <#[String : AnyObject]#>)
+                    coche.sMarca=document.documentID
+                    //coche.setMap(Valores: document.data())
+                    self.arCochei.append(coche)
                     
                     
                     
                     
                 }
+                print("------>>>> ",self.arCochei.count)
+                
+               self.tbMiTableView?.reloadData()    //(ORIGINAL EN EL VIDEO DE YONY (self.miTabla?.reloadData()  )
+                
             }
+            
             
         }
 
