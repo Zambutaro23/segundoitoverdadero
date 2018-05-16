@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 
 class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,DataHolderDelegate{
+   
 
     
     @IBOutlet var tbMiTableView:UITableView?
@@ -41,11 +42,13 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
            
                 // let postDict = snapshot.value as? [String:AnyObject]??[:]
                 
-        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments(){(querySnapshot,err) in
+        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").addSnapshotListener{(querySnapshot,err) in
             if let err = err {
                 print ("Error getting documents: \(err)")
             }else {
+                self.arCochei=[]
                 for document in querySnapshot!.documents {
+                    
                     let coche:Coche=Coche (valores: <#[String : AnyObject]#>)
                     coche.sMarca=document.documentID
                     //coche.setMap(Valores: document.data())
@@ -57,7 +60,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
                 }
                 print("------>>>> ",self.arCochei.count)
                 
-               self.tbMiTableView?.reloadData()    //(ORIGINAL EN EL VIDEO DE YONY (self.miTabla?.reloadData()  )
+                //self.refreshUI().......................................................................................ayudA DEL MAESTRO.
+               //self.tbMiTableView?.reloadData()//(ORIGINAL EN EL VIDEO DE YONY (self.miTabla?.reloadData()  )
                 
             }
             
@@ -76,24 +80,26 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ")
-        
-        if(DataHolder.sharedInstance.arCoches==nil){
-            return 5
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ", self.arCochei.count)
+        return self.arCochei.count
+        //if(DataHolder.sharedInstance.arCoches==nil){
+          //  return 5
             
         }
         
-        else{
-            return (DataHolder.sharedInstance.arCoches?.count)!
-        }
+        //else{
+          //  return (DataHolder.sharedInstance.arCoches?.count)!
+        //}
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TVCMiCelda=tableView.dequeueReusableCell(withIdentifier: "micelda1") as!TVCMiCelda
+        //let cell:TVCMiCelda=tableView.dequeueReusableCell(withIdentifier: "micelda1") as!TVCMiCelda
         
-        let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
-        cell.lblNombre?.text=cochei.sNombre
-        
+        //let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
+        //cell.lblNombre?.text=cochei.sNombre
+        let celda = tableView.dequeueReusableCell(withIdentifier:"tvcmicelda") as!TVCMiCelda
+        celda.lblNombre?.text!           //celda.lblNombre?.text = self.arCiudades[indexParth.row].sName.-...................AYUDA YONY
+        celda.lblFabricadoIPrincipal?.text!     //celda.lblPais?.text = self.arCiudades[indexPath.row].sContry...............AYUDA YONY
         
         
         /*
@@ -130,11 +136,16 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    
+    }
+    func refreshUI() {
+        DispatchQueue.main.async(execute: {
+        //self.miTabla?.reloadData()// preguntar a Yony.......................................................................................................................
+        })
     }
     
 
 
-}

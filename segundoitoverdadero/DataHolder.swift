@@ -25,6 +25,7 @@ class DataHolder: NSObject {
     var firStorage:Storage?
     var  firStorageRef:StorageReference?
     
+ 
     
     
     //var delegate:DataHolderDelegate?
@@ -39,6 +40,7 @@ class DataHolder: NSObject {
         firStorage = Storage.storage()
         fireStoreDB = Firestore.firestore()
         firStorageRef = firStorage?.reference()
+        firStorage = Storage.storage()
         
         
         

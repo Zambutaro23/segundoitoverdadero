@@ -10,7 +10,13 @@ import UIKit
 import FirebaseStorage
 
 class TVCMiCelda: UITableViewCell {
+    //COMO LO TENGO EN LA BASE DE DATOS MI PRIMER PROYECTO.
     @IBOutlet var lblNombre:UILabel?
+    @IBOutlet var lblFabricadoIPrincipal: UILabel?
+    @IBOutlet var lblMarcaIPrincipal: UILabel?
+    @IBOutlet var lbllatitudIPrincipal: UILabel?
+    @IBOutlet var lbllongitudeIPrincipal: UILabel?
+    @IBOutlet var lblmodeloIPrincipal: UILabel?
     @IBOutlet var imgvIPrincipal: UIImageView?
 
     override func awakeFromNib() {
@@ -24,6 +30,8 @@ class TVCMiCelda: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
+        
         
         func descargarImagen(ruta:String){
             self.imgvIPrincipal?.image=nil
