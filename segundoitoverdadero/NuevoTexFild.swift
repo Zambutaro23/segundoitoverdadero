@@ -1,0 +1,21 @@
+//
+//  NuevoTexFild.swift
+//  segundoitoverdadero
+//
+//  Created by JAVIER SÁNCHEZ RODRIGUEZ on 17/5/18.
+//  Copyright © 2018 JAVIER SÁNCHEZ RODRIGUEZ. All rights reserved.
+//
+
+import UIKit
+
+class NuevoTexFild: UITextField {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
