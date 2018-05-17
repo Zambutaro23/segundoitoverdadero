@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
+//ayuda..........................................................................................................................................
 class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,DataHolderDelegate{
    
 
@@ -100,7 +100,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         let celda = tableView.dequeueReusableCell(withIdentifier:"tvcmicelda") as!TVCMiCelda
         celda.lblNombre?.text!           //celda.lblNombre?.text = self.arCiudades[indexParth.row].sName.-...................AYUDA YONY
         celda.lblFabricadoIPrincipal?.text!     //celda.lblPais?.text = self.arCiudades[indexPath.row].sContry...............AYUDA YONY
-        
+        //celda.mostrarImagen(uri: self.arcoches[indexPath.row].surl_Imagen!).................................................Ayuda
         
         /*
         cell.lblNombre?.text="Yony"
@@ -143,7 +143,7 @@ func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     func refreshUI() {
         DispatchQueue.main.async(execute: {
-        //self.miTabla?.reloadData()// preguntar a Yony.......................................................................................................................
+        //self.miTabla?.reloadData()// preguntar a Yony.......................................................................................................................Ayuda
         })
     }
     

@@ -17,6 +17,7 @@
 		C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C42087B36700EEA507 /* CVCMiCelda2.swift */; };
 		C75059C72087CDF400EEA507 /* potenciar-cerebro_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */; };
 		C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C82087D3E000EEA507 /* DataHolder.swift */; };
+		C75452FD20AE0C180091E4AA /* NuevoTexFild.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75452FC20AE0C180091E4AA /* NuevoTexFild.swift */; };
 		C75EA8FE209B988500C9C09D /* Coche.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75EA8FD209B988500C9C09D /* Coche.swift */; };
 		C7669D14208A1458002F2EF2 /* LocationAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7669D13208A1458002F2EF2 /* LocationAdmin.swift */; };
 		C7669D16208A3747002F2EF2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7669D15208A3747002F2EF2 /* MapKit.framework */; };
@@ -61,6 +62,7 @@
 		C75059C42087B36700EEA507 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
 		C75059C62087CDF400EEA507 /* potenciar-cerebro_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "potenciar-cerebro_0.jpg"; sourceTree = SOURCE_ROOT; };
 		C75059C82087D3E000EEA507 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
+		C75452FC20AE0C180091E4AA /* NuevoTexFild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoTexFild.swift; sourceTree = "<group>"; };
 		C75EA8FD209B988500C9C09D /* Coche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coche.swift; sourceTree = "<group>"; };
 		C7669D13208A1458002F2EF2 /* LocationAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAdmin.swift; sourceTree = "<group>"; };
 		C7669D15208A3747002F2EF2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -166,6 +168,7 @@
 				C7086E0A208FBCA20005B4FE /* miPerfil.swift */,
 				C75EA8FD209B988500C9C09D /* Coche.swift */,
 				C7F4990C20A49803004BB274 /* Cyty.swift */,
+				C75452FC20AE0C180091E4AA /* NuevoTexFild.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				C75059C92087D3E000EEA507 /* DataHolder.swift in Sources */,
 				C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */,
 				C7F4990D20A49803004BB274 /* Cyty.swift in Sources */,
+				C75452FD20AE0C180091E4AA /* NuevoTexFild.swift in Sources */,
 				C75059C320879F9900EEA507 /* VCColeccionViewController.swift in Sources */,
 				C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */,
 				C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */,

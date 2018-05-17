@@ -8,8 +8,24 @@
 
 import UIKit
 
-class NuevoTexFild: UITextField {
+class NuevoTexFild: UITextField,UITextFieldDelegate {
 
+    
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+         super.init(coder: aDecoder)
+        
+        delegate=self
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        
+        self.resignFirstResponder()
+        
+        return false
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

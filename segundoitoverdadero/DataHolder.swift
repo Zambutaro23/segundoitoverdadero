@@ -23,7 +23,10 @@ class DataHolder: NSObject {
     var miperfil:miPerfil = miPerfil()
     var arCoches:Array<Coche>?
     var firStorage:Storage?
-    var  firStorageRef:StorageReference?
+    var firStorageRef:StorageReference?
+    var hmImagenDescargadas:[String:UIImage]?=[:]
+    var sUsuario:String?
+    var sPassword:String?
     
  
     
@@ -50,9 +53,22 @@ class DataHolder: NSObject {
         locationAdmin=LocationAdmin()
         
         
+
         
-        
-        
+    }
+    
+    
+    
+    func loadData() {
+        let props = UserDefaults.standard
+        sUsuario = props.string(forKey: "usuario_login")
+        sPassword = props.string(forKey: "usuario_login")
+    }
+    func saveData(){
+        let props = UserDefaults.standard
+        props.setValue(sUsuario, forKey: "usuario_login")
+        props.setValue(sPassword, forKey: "usuario_login")
+        props.synchronize()
     }
     
     func statusDataholder(delegate:DataHolderDelegate){
@@ -91,8 +107,26 @@ class DataHolder: NSObject {
         
         return ""
     }
+    
+    
 }
+extension UIViewController {
+    
+    func hideKeyBoardWhenTappedAround(){
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+}
+
+
 @objc protocol DataHolderDelegate{
+    @objc optional func dataHolderImagenDescargada(imagen:UIImage)
     @objc optional func dataHolderPruebaDataHolder(status:Int)
 
 }

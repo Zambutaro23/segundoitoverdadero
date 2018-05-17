@@ -18,7 +18,10 @@ class TVCMiCelda: UITableViewCell {
     @IBOutlet var lbllongitudeIPrincipal: UILabel?
     @IBOutlet var lblmodeloIPrincipal: UILabel?
     @IBOutlet var imgvIPrincipal: UIImageView?
-
+    
+    
+    var imagenDescarga:UIImage?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,17 +33,24 @@ class TVCMiCelda: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+        func mostrarImagen(uri:String){
+            self.imgvIPrincipal?.image = nil
+            
+            //if imagenDescarga == nil {
+                
+            
+            let gsReference = DataHolder.sharedInstance.firStorage?.reference(forURL: uri)
         
-        
-        
-        func descargarImagen(ruta:String){
-            self.imgvIPrincipal?.image=nil
-            let islandRef = DataHolder.sharedInstance.firDataBaseRef?.child(ruta)
-            islandRef?.data(withMaxSize: 1 * 1024 * 1024){
-                data,error in
-                if error != nil {
+        //func descargarImagen(ruta:String){
+          //  self.imgvIPrincipal?.image=nil
+            gsReference?.getData (maxSize: 1 * 1024 * 1024){ data,error in
+                if let error = error {
                     
-                }
+                }else{
+                    //let image = UIImage(data: data!)
+                    self.imagenDescarga = UIImage (data: data!)
+                    self.imgvIPrincipal?.image = self.imagenDescarga
             }
             
         }
