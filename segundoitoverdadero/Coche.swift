@@ -28,13 +28,45 @@ class Coche: NSObject {
     var surl_Imagen:String?
     var modelo:String?
     
-   
+    override init() {
+        super.init()
+        sNombre=""
+        sMarca=""
+        iFabricacion=0
+        bdLat=0
+        bdLon=0
+        surl_Imagen=""
+        modelo=""
+    }
+    
+    init(valores:[String:Any]) {
+        sNombre=valores["Nombre"] as?   String
+        sMarca=valores["Marca"] as? String
+        iFabricacion=valores["Fabricado"] as? Int
+        bdLat=valores["lat"] as? Double
+        bdLon=valores["lon"] as? Double
+        surl_Imagen=valores["RutaImagenP"] as? String
+        modelo=valores["modelo"] as? String
+    }
+    
+    func getDiccionary()-> [String:AnyObject]{
+        var hm:[String:AnyObject]=[:]
+        hm["Nombre"]=sNombre! as AnyObject
+        hm["Marca"]=sMarca! as AnyObject
+        hm["Fabricados"]=iFabricacion! as AnyObject
+        hm["lat"]=bdLat! as AnyObject
+        hm["lon"]=bdLon! as AnyObject
+        hm["RutaImagenP"]=sNombre! as AnyObject
+        hm["modelo"]=sNombre! as AnyObject
+        
+        
+    }
     
     func setCoche(valores:[String:Any]) {
         
         sNombre=valores["Nombre"] as?   String
         sMarca=valores["Marca"] as? String
-        iFabricacion=valores["Fabricados"] as? Int
+        iFabricacion=valores["Fabricado"] as? Int
         bdLat=valores["lat"] as? Double
         bdLon=valores["lon"] as? Double
         surl_Imagen=valores["RutaImagenP"] as? String
@@ -43,31 +75,21 @@ class Coche: NSObject {
         if surl_Imagen == nil{
             surl_Imagen = "gs//primer-proyecto-33c88.appspot.com/coches/Fisker-EMotion.jpg"
         }
+ 
+        
+    }
+    
+    func getCoche() -> [String:Any] {
+        return[
+            "NOMBRE":sNombre as Any,
+            "MARCA":sMarca as Any,
+            "FABRICADO": iFabricacion as Any,
+            "LONGITUD": bdLon as Any,
+            "LATITUD": bdLat as Any,
+            "IMAGEN": surl_Imagen as Any,
+            "MODELO": modelo as Any]
         
         
-        print("Nombre de tu :",sNombre ?? <#default value#>)
-        print("Nombre de tu :",sMarca)
-        print("Nombre de tu :", iFabricacion ?? <#default value#>! as Any)
-        print("Nombre de tu :", bdLon ?? <#default value#>)
-        print("Nombre de tu :",bdLat, <#default value#>)
-        print("Nombre de tu :",surl_Imagen, <#default value#>)
-         print("Nombre de tu :",modelo, <#default value#>)
-        
-        func getCoche() -> [String:Any] {
-            return[
-                "NOMBRE":sNombre as Any,
-                "MARCA":sMarca as Any,
-                "FABRICADO": iFabricacion as Any,
-                "LONGITUD": bdLon as Any,
-                "LATITUD": bdLat as Any,
-                "IMAGEN": surl_Imagen as Any,
-                "MODELO": modelo as Any]
-            
-            
-            
-            
-            
-        }
         
         
         

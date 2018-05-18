@@ -12,6 +12,8 @@ import FirebaseDatabase
 
 //ayuda..........................................................................................................................................
 class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,DataHolderDelegate{
+    
+
    
 
     
@@ -21,7 +23,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        /*
         DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value,with:{ (snapshot) in
             let arTemp=snapshot.value as? Array<AnyObject>
             //if (DataHolder.sharedInstance.arCoches==nil){
@@ -38,7 +40,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
                 //print("EL COCHE EN LA POSICION 0 ES: ", DataHolder.sharedInstance.arCoches)
             
         })
-        
+        */
            
                 // let postDict = snapshot.value as? [String:AnyObject]??[:]
                 
@@ -49,8 +51,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
                 self.arCochei=[]
                 for document in querySnapshot!.documents {
                     
-                    let coche:Coche=Coche (valores: <#[String : AnyObject]#>)
-                    coche.sMarca=document.documentID
+                    let coche:Coche=Coche (valores: document.data())
+                  
                     //coche.setMap(Valores: document.data())
                     self.arCochei.append(coche)
                     
@@ -79,17 +81,11 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ", self.arCochei.count)
         return self.arCochei.count
-        //if(DataHolder.sharedInstance.arCoches==nil){
-          //  return 5
-            
-        }
-        
-        //else{
-          //  return (DataHolder.sharedInstance.arCoches?.count)!
-        //}
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,8 +94,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         //let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
         //cell.lblNombre?.text=cochei.sNombre
         let celda = tableView.dequeueReusableCell(withIdentifier:"tvcmicelda") as!TVCMiCelda
-        celda.lblNombre?.text!           //celda.lblNombre?.text = self.arCiudades[indexParth.row].sName.-...................AYUDA YONY
-        celda.lblFabricadoIPrincipal?.text!     //celda.lblPais?.text = self.arCiudades[indexPath.row].sContry...............AYUDA YONY
+        celda.lblNombre?.text = self.arCochei[indexPath.row].sNombre
+        celda.lblPais?.text = self.arCochei[indexPath.row].sMarca
         //celda.mostrarImagen(uri: self.arcoches[indexPath.row].surl_Imagen!).................................................Ayuda
         
         /*
@@ -126,6 +122,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
         print("He selecionado la posicción: %d",indexPath.row);
+        let coche = Coche()
+        let pos = DataHolder.sharedInstance.arCoches?.count
         
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

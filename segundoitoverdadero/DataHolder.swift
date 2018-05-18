@@ -51,10 +51,6 @@ class DataHolder: NSObject {
     
     func initLocationAdmin(){
         locationAdmin=LocationAdmin()
-        
-        
-
-        
     }
     
     
@@ -70,6 +66,20 @@ class DataHolder: NSObject {
         props.setValue(sPassword, forKey: "usuario_login")
         props.synchronize()
     }
+    
+    
+    
+    func insertarCoche(coche:Coche,posicion post:Int) {
+    
+        let rutaTemp = String(format: "/Coches/%d",post )
+        let childUpdates = [rutaTemp:Coche.getDiccionary()]
+        firDataBaseRef.updateChildValues(childUpdates)
+    
+    }
+    
+    
+    
+    
     
     func statusDataholder(delegate:DataHolderDelegate){
         var i = 0
