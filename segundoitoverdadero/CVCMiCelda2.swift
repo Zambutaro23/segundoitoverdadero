@@ -33,7 +33,7 @@ class CVCMiCelda2: UICollectionViewCell {
     
             }else{
                 let image=UIImage(data:data!)
-                self.imgvPrincipal?.image=image
+                self.image=image
         
           }
     

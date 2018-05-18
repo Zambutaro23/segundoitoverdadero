@@ -95,7 +95,9 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         //cell.lblNombre?.text=cochei.sNombre
         let celda = tableView.dequeueReusableCell(withIdentifier:"tvcmicelda") as!TVCMiCelda
         celda.lblNombre?.text = self.arCochei[indexPath.row].sNombre
-        celda.lblPais?.text = self.arCochei[indexPath.row].sMarca
+        celda.lblMarcaIPrincipal?.text = self.arCochei[indexPath.row].sMarca
+        
+        
         //celda.mostrarImagen(uri: self.arcoches[indexPath.row].surl_Imagen!).................................................Ayuda
         
         /*
@@ -118,13 +120,17 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
              else if(indexPath.row==5){
                 cell.lblNombre?.text="Ismael"
         }*/
-        return cell;
+    
+        return celda
     }
+   
+    
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
         print("He selecionado la posicción: %d",indexPath.row);
-        let coche = Coche()
-        let pos = DataHolder.sharedInstance.arCoches?.count
-        
+        let posf = DataHolder.sharedInstance.arCoches?.count
+        let co = Coche()
+        co.sMarca=String(format: "Coche numero%d",posf!)
+        DataHolder.sharedInstance.insertarCoche(coche: co, posicion: posf!)
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("He deseleccionado la posicion:",indexPath.row);
@@ -134,7 +140,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     
@@ -146,4 +152,4 @@ func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
 
-
+}

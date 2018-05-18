@@ -37,12 +37,8 @@ class Cyty: NSObject {
        
         
         
-        
-        print("Nombre de tu perfil:",bCapital ?? <#default value#>)
-        print("Nombre de tu perfil:",sName)
-        print("Nombre de tu perfil:",sContry ?? <#default value#>! as Any)
-        print("Nombre de tu perfil:",iPopulation ?? <#default value#>)
-        print("Nombre de tu perfil:",sState ?? <#default value#>)
+    
+    }
         
         
         
@@ -53,11 +49,7 @@ class Cyty: NSObject {
                 "IDCONTRY": sContry as Any,
                 "IDPOPULATION": iPopulation as Any,
                 "IDSTATE": sState as Any]
-          
-            
-      
-            
-        
+
         
         
     }
@@ -65,4 +57,4 @@ class Cyty: NSObject {
     
     
 }
-}
+

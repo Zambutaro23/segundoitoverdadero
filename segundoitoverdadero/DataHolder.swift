@@ -70,9 +70,10 @@ class DataHolder: NSObject {
     
     
     func insertarCoche(coche:Coche,posicion post:Int) {
-    
-        let rutaTemp = String(format: "/Coches/%d",post )
-        let childUpdates = [rutaTemp:Coche.getDiccionary()]
+        let rutaTemp = String (format: "/Coches/%d", post)
+        let key = firDataBaseRef.child("Relaciones").childByAutoId().key
+        let rutaTempKey = String(format: "/Relaciones/%d",post )
+        let childUpdates = [rutaTemp:Coche.getDiccionary(coche)]
         firDataBaseRef.updateChildValues(childUpdates)
     
     }

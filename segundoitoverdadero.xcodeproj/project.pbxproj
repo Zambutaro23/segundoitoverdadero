@@ -12,6 +12,7 @@
 		C711DC8A20863F9800DBF05F /* VCRegistrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8920863F9800DBF05F /* VCRegistrer.swift */; };
 		C711DC8C2086488100DBF05F /* VCPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8B2086488100DBF05F /* VCPrincipal.swift */; };
 		C711DC8E20866B1700DBF05F /* TVCMiCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */; };
+		C713EFA220AF55EB00C47B6A /* VCSelectimg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C713EFA120AF55EB00C47B6A /* VCSelectimg.swift */; };
 		C7161CB42088EE16009BAA87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7161CB32088EE16009BAA87 /* GoogleService-Info.plist */; };
 		C75059C320879F9900EEA507 /* VCColeccionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C220879F9900EEA507 /* VCColeccionViewController.swift */; };
 		C75059C52087B36700EEA507 /* CVCMiCelda2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75059C42087B36700EEA507 /* CVCMiCelda2.swift */; };
@@ -57,6 +58,7 @@
 		C711DC8920863F9800DBF05F /* VCRegistrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegistrer.swift; sourceTree = "<group>"; };
 		C711DC8B2086488100DBF05F /* VCPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPrincipal.swift; sourceTree = "<group>"; };
 		C711DC8D20866B1700DBF05F /* TVCMiCelda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCMiCelda.swift; sourceTree = "<group>"; };
+		C713EFA120AF55EB00C47B6A /* VCSelectimg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSelectimg.swift; sourceTree = "<group>"; };
 		C7161CB32088EE16009BAA87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75059C220879F9900EEA507 /* VCColeccionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCColeccionViewController.swift; sourceTree = "<group>"; };
 		C75059C42087B36700EEA507 /* CVCMiCelda2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCMiCelda2.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C75EA8FD209B988500C9C09D /* Coche.swift */,
 				C7F4990C20A49803004BB274 /* Cyty.swift */,
 				C75452FC20AE0C180091E4AA /* NuevoTexFild.swift */,
+				C713EFA120AF55EB00C47B6A /* VCSelectimg.swift */,
 			);
 			path = segundoitoverdadero;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C713EFA220AF55EB00C47B6A /* VCSelectimg.swift in Sources */,
 				C76D31552080FD4700CAFC05 /* ViewController.swift in Sources */,
 				C7086E0B208FBCA20005B4FE /* miPerfil.swift in Sources */,
 				C7669D18208A3805002F2EF2 /* VCMapa.swift in Sources */,

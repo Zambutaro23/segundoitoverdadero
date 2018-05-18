@@ -8,11 +8,16 @@
 
 import UIKit
 
-class VCSelectimg: UIViewController {
-
+class VCSelectimg: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    @IBOutlet var imgView:UIImageView?
+let imagePicker = UIImagePickerController ()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +26,28 @@ class VCSelectimg: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func accionBotonGaleria(){
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        self.present (imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func accioBotonCamara(){
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .camera
+        
+        self.present(imagePicker,animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imgView?.image = img
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
     /*
     // MARK: - Navigation
 
