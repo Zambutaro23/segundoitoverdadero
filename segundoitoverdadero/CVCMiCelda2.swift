@@ -29,13 +29,11 @@ class CVCMiCelda2: UICollectionViewCell {
     
     
         islandRef?.getData(maxSize:1*1024*1024){ data,error in
-            if case let error! = error{
-    
-            }else{
+          
                 let image=UIImage(data:data!)
-                self.image=image
+                //self.image=image
         
-          }
+          
     
         }
     }

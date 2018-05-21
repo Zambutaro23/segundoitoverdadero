@@ -11,8 +11,8 @@ import FirebaseAuth
 
 class VCRegistrer: UIViewController {
     
-    @IBOutlet var txtEmail:UITextField?
-    @IBOutlet var txtPass:UITextField?
+    @IBOutlet var txtfEmail:UITextField?
+    @IBOutlet var txtfPass:UITextField?
     
 
     override func viewDidLoad() {
@@ -33,11 +33,11 @@ class VCRegistrer: UIViewController {
         DataHolder.sharedInstance.miperfil.iFecha = 1600
         DataHolder.sharedInstance.miperfil.iAltura = 184
         
-        Auth.auth().createUser(withEmail: (txtEmail?.text)!, password: (txtPass?.text)!) { (user, error) in
+        Auth.auth().createUser(withEmail: (txtfEmail?.text)!, password: (txtfPass?.text)!) { (user, error) in
             if(error == nil){
                 //self.performSegue(withIdentifier: "trregistro", sender: self)
                 DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miperfil.getMap())
-                self.performSegue(withIdentifier: "trtegistro", sender: self)
+                self.performSegue(withIdentifier: "trlogin", sender: self)
                 
             }
             else{

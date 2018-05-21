@@ -59,7 +59,7 @@ class Coche: NSObject {
         hm["RutaImagenP"]=sNombre! as AnyObject
         hm["modelo"]=sNombre! as AnyObject
         
-        
+        return hm;
     }
     
     func setCoche(valores:[String:Any]) {
@@ -123,4 +123,4 @@ class Coche: NSObject {
         
         
         }*/
-}
+

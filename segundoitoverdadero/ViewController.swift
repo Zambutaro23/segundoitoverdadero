@@ -8,13 +8,12 @@
 
 import UIKit
 import FirebaseAuth
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataHolderDelegate {
     
     
-    @IBOutlet var txtfUsuario:NuevoTexFild?
-    @IBOutlet var txtfPass:NuevoTexFild?
+    @IBOutlet var txtfUsuario:UITextField?
+    @IBOutlet var txtfPass:UITextField?
     @IBOutlet var txtAConsola:UITextView?
-    @IBOutlet var txtfEmail:UITextView?
     @IBOutlet var uiswitchRecordar:UISwitch?
     
    //ddddddd
@@ -27,8 +26,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //DataHolder.sharedInstance.numeroCeldasColeccion
         
-        txtfUsuario?.text=DataHolder.sharedInstance.sUsuario
-        txtfPass?.text=DataHolder.sharedInstance.sPassword
+       DataHolder.sharedInstance.miperfil.sEmail=txtfUsuario?.text
+       
         
         //if (DataHolder.sharedInstance.sPassword?.isEmpty)!{
            // accionBotonLogear()
@@ -65,14 +64,21 @@ class ViewController: UIViewController {
     
     
     @IBAction func accionBotonLogear(){
-        Auth.auth().signIn(withEmail: (txtfEmail?.text)!,password: (txtfPass?.text)!){ (user,error) in
-            if(error==nil){
+        Auth.auth().signIn(withEmail: (txtfUsuario?.text)!, password: (txtfPass?.text)!){ (user, error) in
+            if(user != nil){
+                let refPerfil=DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!)
+                refPerfil?.getDocument{(document , error) in
+                    if (document != nil){
+                        DataHolder.sharedInstance.miperfil.setMap(valores: (document?.data())!)
+                        self.performSegue(withIdentifier: "trlogin", sender: self)
+                    }
+                }
                 if(self.uiswitchRecordar?.isOn)!{
-                    DataHolder.sharedInstance.sUsuario = self.txtfEmail?.text
+                    DataHolder.sharedInstance.sUsuario = self.txtfUsuario?.text
                     DataHolder.sharedInstance.sPassword = self.txtfPass?.text
                     DataHolder.sharedInstance.saveData ()
                 }
-                self.performSegue(withIdentifier: "trregistro", sender: self)
+                
             }else{
                 print("ERROR EN REGISTRO",error!)
             }
