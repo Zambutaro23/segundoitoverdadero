@@ -34,7 +34,10 @@ class VCMapa: UIViewController,MKMapViewDelegate {
                 coordTemp.longitude = cochei.bdLon!
                 self.agregarPin(coordenada: coordTemp, titulo: cochei.sNombre!)
             }
-                
+            
+            
+            
+            
        
        // MiMapa?.delegate=self
         
