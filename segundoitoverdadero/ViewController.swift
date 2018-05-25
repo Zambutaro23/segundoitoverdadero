@@ -66,10 +66,11 @@ class ViewController: UIViewController, DataHolderDelegate {
     @IBAction func accionBotonLogear(){
         Auth.auth().signIn(withEmail: (txtfUsuario?.text)!, password: (txtfPass?.text)!){ (user, error) in
             if(user != nil){
+                
                 let refPerfil=DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!)
                 refPerfil?.getDocument{(document , error) in
                     if (document != nil){
-                        DataHolder.sharedInstance.miperfil.setMap(valores: (document?.data())!)
+                        //DataHolder.sharedInstance.miperfil.setMap(valores: (document?.data())!)
                         self.performSegue(withIdentifier: "trlogin", sender: self)
                     }
                 }

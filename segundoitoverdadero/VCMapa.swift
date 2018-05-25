@@ -20,12 +20,17 @@ class VCMapa: UIViewController,MKMapViewDelegate {
         super.viewDidLoad()
           MiMapa?.showsUserLocation=true
         
-        DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value,with:{ (snapshot)
-            in
-            let arTemp=snapshot.value as? Array<AnyObject>
-            
-            DataHolder.sharedInstance.arCoches=Array<Coche>()
-            for co in arTemp! as [AnyObject]{
+        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+        
+        for co in DataHolder.sharedInstance.arCoches!{
                 let cochei=Coche(valores: co as![String:AnyObject])
                 DataHolder.sharedInstance.arCoches?.append(cochei)
                 
@@ -34,7 +39,7 @@ class VCMapa: UIViewController,MKMapViewDelegate {
                 coordTemp.longitude = cochei.bdLon!
                 self.agregarPin(coordenada: coordTemp, titulo: cochei.sNombre!)
             }
-            
+          
             
             
             
@@ -55,10 +60,10 @@ class VCMapa: UIViewController,MKMapViewDelegate {
         
         
             
-        })
-    }
-
+    //};)
     
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -106,6 +111,5 @@ class VCMapa: UIViewController,MKMapViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 
 }

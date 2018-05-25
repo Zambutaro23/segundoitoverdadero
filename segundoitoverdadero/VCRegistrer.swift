@@ -37,6 +37,7 @@ class VCRegistrer: UIViewController {
             if(error == nil){
                 //self.performSegue(withIdentifier: "trregistro", sender: self)
                 DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miperfil.getMap())
+                print("!!!!!!!!!!!!!---------------- ")
                 self.performSegue(withIdentifier: "trlogin", sender: self)
                 
             }
