@@ -18,7 +18,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
 
     
     @IBOutlet var tbMiTableView:UITableView?
-    var arCochei: [Coche] = []
+    //var arCochei: [Coche] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,21 +48,21 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
             if let err = err {
                 print ("Error getting documents: \(err)")
             }else {
-                self.arCochei=[]
+                DataHolder.sharedInstance.arCoches=[]
                 for document in querySnapshot!.documents {
                     
                     let coche:Coche=Coche (valores: document.data())
                   
                     //coche.setMap(Valores: document.data())
-                    self.arCochei.append(coche)
+                    DataHolder.sharedInstance.arCoches.append(coche)
                     
                     
                     
                     
                 }
-                print("------>>>> ",self.arCochei.count)
+                print("------>>>> ",DataHolder.sharedInstance.arCoches.count)
                 
-                //self.refreshUI().......................................................................................ayudA DEL MAESTRO.
+                self.refreshUI()
                //self.tbMiTableView?.reloadData()//(ORIGINAL EN EL VIDEO DE YONY (self.miTabla?.reloadData()  )
                 
             }
@@ -83,8 +83,8 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ", self.arCochei.count)
-        return self.arCochei.count
+        print("SSOO CONSULTA CANTIDAD DE FILAS PARA PINTAR ", DataHolder.sharedInstance.arCoches.count)
+        return DataHolder.sharedInstance.arCoches.count
 
     }
     
@@ -93,9 +93,9 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         
         //let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
         //cell.lblNombre?.text=cochei.sNombre
-        let celda = tableView.dequeueReusableCell(withIdentifier:"tvcmicelda") as!TVCMiCelda
-        celda.lblNombre?.text = self.arCochei[indexPath.row].sNombre
-        celda.lblMarcaIPrincipal?.text = self.arCochei[indexPath.row].sMarca
+        let celda = tableView.dequeueReusableCell(withIdentifier:"micelda1") as!TVCMiCelda
+        celda.lblNombre?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
+        celda.lblMarcaIPrincipal?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sMarca
         
         
         //celda.mostrarImagen(uri: self.arcoches[indexPath.row].surl_Imagen!).................................................Ayuda
@@ -127,10 +127,10 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
         print("He selecionado la posicción: %d",indexPath.row);
-        let posf = DataHolder.sharedInstance.arCoches?.count
+        let posf = DataHolder.sharedInstance.arCoches.count
         let co = Coche()
-        co.sMarca=String(format: "Coche numero%d",posf!)
-        DataHolder.sharedInstance.insertarCoche(coche: co, posicion: posf!)
+        co.sMarca=String(format: "Coche numero%d",posf)
+        DataHolder.sharedInstance.insertarCoche(coche: co, posicion: posf)
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("He deseleccionado la posicion:",indexPath.row);
@@ -147,7 +147,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
     }
     func refreshUI() {
         DispatchQueue.main.async(execute: {
-        //self.miTabla?.reloadData()// preguntar a Yony.......................................................................................................................Ayuda
+        self.tbMiTableView?.reloadData()// preguntar a Yony.......................................................................................................................Ayuda
         })
     }
     

@@ -21,7 +21,7 @@ class DataHolder: NSObject {
     var fireStoreDB:Firestore?
     var sNick:String="Yony"
     var miperfil:miPerfil = miPerfil()
-    var arCoches:Array<Coche>?
+    var arCoches:[Coche] = []
     var firStorage:Storage?
     var firStorageRef:StorageReference?
     var hmImagenDescargadas:[String:UIImage]?=[:]

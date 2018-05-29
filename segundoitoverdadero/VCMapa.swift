@@ -9,40 +9,57 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import CoreLocation
 
-class VCMapa: UIViewController,MKMapViewDelegate {
+class VCMapa: UIViewController,MKMapViewDelegate{
 
     
     @IBOutlet var MiMapa:MKMapView?
     var pines:[String:MKAnnotation]? = [:]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-          MiMapa?.showsUserLocation=true
         
-        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+        super.viewDidLoad()
+        
+        MiMapa?.showsUserLocation=true
+        
+        if DataHolder.sharedInstance.arCoches.count == 0 {
+            DataHolder.sharedInstance.fireStoreDB?.collection("Coches").addSnapshotListener{(querySnapshot,err) in
+                if let err = err {
+                    print ("Error getting documents: \(err)")
+                }else {
+                    DataHolder.sharedInstance.arCoches=[]
+                    for document in querySnapshot!.documents {
+                        
+                        let coche:Coche=Coche (valores: document.data())
+                        
+                        //coche.setMap(Valores: document.data())
+                        DataHolder.sharedInstance.arCoches.append(coche)
+                        
+                        var coordTemp: CLLocationCoordinate2D = CLLocationCoordinate2D()
+                        coordTemp.latitude = coche.bdLat!
+                        coordTemp.longitude = coche.bdLon!
+                        self.agregarPin(coordenada: coordTemp, titulo: coche.sNombre!)
+  
+                    }
+                    print("------>>>> ",DataHolder.sharedInstance.arCoches.count)
+                    
+                    //self.tbMiTableView?.reloadData()//(ORIGINAL EN EL VIDEO DE YONY (self.miTabla?.reloadData()  )
+                    
                 }
+                
+                
             }
         }
         
-        for co in DataHolder.sharedInstance.arCoches!{
-                let cochei=Coche(valores: co as![String:AnyObject])
-                DataHolder.sharedInstance.arCoches?.append(cochei)
-                
+        else{
+            for coche in DataHolder.sharedInstance.arCoches{
                 var coordTemp: CLLocationCoordinate2D = CLLocationCoordinate2D()
-                coordTemp.latitude = cochei.bdLat!
-                coordTemp.longitude = cochei.bdLon!
-                self.agregarPin(coordenada: coordTemp, titulo: cochei.sNombre!)
+                coordTemp.latitude = coche.bdLat!
+                coordTemp.longitude = coche.bdLon!
+                self.agregarPin(coordenada: coordTemp, titulo: coche.sNombre!)
             }
-          
-            
-            
-            
+        }
        
        // MiMapa?.delegate=self
         

@@ -39,7 +39,7 @@
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="accionBotonLogear" destination="BYZ-38-t0r" eventType="touchUpInside" id="wdf-eq-CX5"/>
-                                    <segue destination="NFu-Vk-6Gj" kind="show" id="p90-S8-H8a"/>
+                                    <segue destination="NFu-Vk-6Gj" kind="show" identifier="trlogin" id="p90-S8-H8a"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pw3-UQ-GLj" customClass="NuevoTexFild" customModule="segundoitoverdadero" customModuleProvider="target">
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-1993" y="-436"/>
         </scene>
         <!--Galería-->
         <scene sceneID="VjF-IW-1Kd">
@@ -120,20 +120,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7q-EE-8L3">
-                                <rect key="frame" x="104" y="397" width="63" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GALERIA"/>
-                                <connections>
-                                    <action selector="accionBotonGaleria" destination="R17-YL-YX6" eventType="touchUpInside" id="ZQC-1d-E45"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaS-1O-H8Z">
-                                <rect key="frame" x="203" y="397" width="63" height="30"/>
+                                <rect key="frame" x="207" y="403" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="CAMARA"/>
                                 <connections>
                                     <action selector="accioBotonCamara" destination="R17-YL-YX6" eventType="touchUpInside" id="QYN-vy-Y0o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7q-EE-8L3">
+                                <rect key="frame" x="104" y="400" width="63" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GALERIA"/>
+                                <connections>
+                                    <action selector="accionBotonGaleria" destination="R17-YL-YX6" eventType="touchUpInside" id="ZQC-1d-E45"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cK-e4-95b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="-1044"/>
+            <point key="canvasLocation" x="638" y="-754"/>
         </scene>
         <!--Colección-->
         <scene sceneID="vb6-HD-kcE">
@@ -218,22 +218,33 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="backgroundView" destination="TKX-O9-jGh" id="cHD-YF-6T2"/>
                                             <outlet property="imgvIPrincipal" destination="QJM-jz-PWy" id="Wkw-qS-OhC"/>
-                                            <outlet property="lbNombre" destination="Fsb-jU-hPM" id="XWo-mg-2Ru"/>
+                                            <outlet property="lblFabricadoIPrincipal" destination="TKX-O9-jGh" id="J7R-Xz-p0c"/>
+                                            <outlet property="lblMarcaIPrincipal" destination="fDL-7U-LdK" id="oGZ-N7-RlZ"/>
+                                            <outlet property="lblNombre" destination="Fsb-jU-hPM" id="EjA-iy-2m0"/>
+                                            <outlet property="lbllatitudIPrincipal" destination="uLZ-X0-4ln" id="WaZ-XJ-iEQ"/>
+                                            <outlet property="lbllongitudeIPrincipal" destination="vn4-ac-fS0" id="zn5-Cb-rq9"/>
+                                            <outlet property="lblmodeloIPrincipal" destination="I52-vp-FWo" id="fs3-5q-zvg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CKR-YB-0ap" id="VCI-3f-1lN"/>
+                                    <outlet property="delegate" destination="CKR-YB-0ap" id="8Gn-NP-FC3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xja-sR-XQ3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Colección" id="Xdq-Qs-Nu2"/>
+                    <connections>
+                        <outlet property="tbMiTableView" destination="G1b-wp-aO2" id="YeG-Hz-Ab6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eno-wl-i9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-855"/>
+            <point key="canvasLocation" x="639" y="36"/>
         </scene>
         <!--Lista-->
         <scene sceneID="edR-bb-6qD">
@@ -289,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxP-PJ-dkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-1520"/>
+            <point key="canvasLocation" x="638" y="-2319"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="kOb-85-s9b">
@@ -309,7 +320,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dye-ut-WUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852" y="-1188"/>
+            <point key="canvasLocation" x="-793" y="-509"/>
         </scene>
         <!--Registrer-->
         <scene sceneID="Rng-Cf-aDO">
@@ -409,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U4-aK-oxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="941"/>
+            <point key="canvasLocation" x="-1860" y="1071"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="leX-h0-owx">
@@ -429,10 +440,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="pev-km-cjC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="MiMapa" destination="Ven-wV-coH" id="b6f-mI-F7i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1K-gY-cFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-1314"/>
+            <point key="canvasLocation" x="638" y="-1513"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.057371734812552644" blue="0.049410852932477378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
