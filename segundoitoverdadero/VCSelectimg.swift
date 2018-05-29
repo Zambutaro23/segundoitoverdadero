@@ -43,6 +43,8 @@ let imagePicker = UIImagePickerController ()
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        //imgData = UIImageJPEGRepresentation(img!, 0.5) ! as Data as NSData
+        
         imgView?.image = img
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
