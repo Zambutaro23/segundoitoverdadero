@@ -12,7 +12,7 @@ class VCSelectimg: UIViewController,UIImagePickerControllerDelegate,UINavigation
     
     @IBOutlet var imgView:UIImageView?
 let imagePicker = UIImagePickerController ()
-    
+    var imgData:Data?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +41,34 @@ let imagePicker = UIImagePickerController ()
         self.present(imagePicker,animated: true, completion: nil)
     }
     
+    @IBAction func accionBotonSubir(){
+        print("me mola la zanaoria")
+        let imagenRef = DataHolder.sharedInstance.firStorageRef?.child("coche/Bravo.jpg")
+        
+        let uploadTask = imagenRef?.putData(imgData! as Data, metadata:nil){ (metadata,error)
+            in
+            guard let metadata = metadata else {
+                return
+            }
+            let downloadURL=metadata.downloadURL
+            print("MI URL: ",downloadURL)
+        }
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
-        //imgData = UIImageJPEGRepresentation(img!, 0.5) ! as Data as NSData
+        imgData = UIImageJPEGRepresentation(img!, 0.5) as! Data as Data
+        
+        
+        
         
         imgView?.image = img
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
