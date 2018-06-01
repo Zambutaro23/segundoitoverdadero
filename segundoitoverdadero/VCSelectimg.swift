@@ -11,8 +11,8 @@ import UIKit
 class VCSelectimg: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet var imgView:UIImageView?
-let imagePicker = UIImagePickerController ()
-    var imgData:Data?;
+    let imagePicker = UIImagePickerController ()
+    var imgData:NSData?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +42,11 @@ let imagePicker = UIImagePickerController ()
     }
     
     @IBAction func accionBotonSubir(){
+        let fecha:Date = Date()
+        let tiempoEnMillis = Int64((fecha.timeIntervalSince1970*1000.0).rounded())
+        
         print("me mola la zanaoria")
         let imagenRef = DataHolder.sharedInstance.firStorageRef?.child("coche/Bravo.jpg")
-        
         let uploadTask = imagenRef?.putData(imgData! as Data, metadata:nil){ (metadata,error)
             in
             guard let metadata = metadata else {
@@ -53,23 +55,21 @@ let imagePicker = UIImagePickerController ()
             let downloadURL=metadata.downloadURL
             print("MI URL: ",downloadURL)
         }
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imgData = UIImageJPEGRepresentation(img!, 0.5) as! Data as Data
-        
-        
-        
-        
+        imgData = UIImageJPEGRepresentation(img!, 0.5) as! Data as NSData
         imgView?.image = img
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     /*
     // MARK: - Navigation
 

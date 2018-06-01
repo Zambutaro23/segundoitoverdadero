@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R17-YL-YX6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -146,7 +146,7 @@
                                             <constraint firstAttribute="height" constant="330" id="qU7-36-V0b"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7q-EE-8L3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7q-EE-8L3">
                                         <rect key="frame" x="257" y="492" width="63" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="63" id="VKC-5j-POX"/>
@@ -163,7 +163,7 @@
                                             <action selector="accionBotonSubir" destination="R17-YL-YX6" eventType="touchUpInside" id="7Pa-pq-bSx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaS-1O-H8Z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaS-1O-H8Z">
                                         <rect key="frame" x="30" y="498" width="63" height="30"/>
                                         <state key="normal" title="CAMARA"/>
                                         <connections>
@@ -172,15 +172,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="W7q-EE-8L3" secondAttribute="bottom" constant="52" id="JP0-E5-J7X"/>
-                                    <constraint firstItem="UaS-1O-H8Z" firstAttribute="leading" secondItem="oJ9-KR-f1C" secondAttribute="leading" constant="36" id="Jtb-rs-pAd"/>
+                                    <constraint firstAttribute="bottom" secondItem="W7q-EE-8L3" secondAttribute="bottom" constant="90" id="JP0-E5-J7X"/>
+                                    <constraint firstItem="UaS-1O-H8Z" firstAttribute="leading" secondItem="oJ9-KR-f1C" secondAttribute="leading" constant="30" id="Jtb-rs-pAd"/>
                                     <constraint firstItem="8mD-6o-cRH" firstAttribute="top" secondItem="oJ9-KR-f1C" secondAttribute="top" id="TT4-QJ-gWF"/>
-                                    <constraint firstAttribute="bottom" secondItem="UaS-1O-H8Z" secondAttribute="bottom" constant="58" id="VyY-L8-Zst"/>
-                                    <constraint firstItem="UaS-1O-H8Z" firstAttribute="top" secondItem="W7q-EE-8L3" secondAttribute="top" id="XQJ-ll-tuD"/>
+                                    <constraint firstAttribute="bottom" secondItem="UaS-1O-H8Z" secondAttribute="bottom" constant="90" id="VyY-L8-Zst"/>
+                                    <constraint firstItem="UaS-1O-H8Z" firstAttribute="top" secondItem="W7q-EE-8L3" secondAttribute="top" constant="6" id="XQJ-ll-tuD"/>
                                     <constraint firstItem="mYZ-P6-oUI" firstAttribute="leading" secondItem="oJ9-KR-f1C" secondAttribute="leading" constant="102" id="Xd8-29-wbp"/>
                                     <constraint firstAttribute="bottom" secondItem="mYZ-P6-oUI" secondAttribute="bottom" constant="55" id="rqj-Ay-QyT"/>
                                     <constraint firstItem="8mD-6o-cRH" firstAttribute="leading" secondItem="oJ9-KR-f1C" secondAttribute="leading" id="v2r-a2-EVW"/>
-                                    <constraint firstAttribute="trailing" secondItem="W7q-EE-8L3" secondAttribute="trailing" constant="103" id="wEo-cO-e31"/>
+                                    <constraint firstAttribute="trailing" secondItem="W7q-EE-8L3" secondAttribute="trailing" constant="54" id="wEo-cO-e31"/>
                                     <constraint firstAttribute="trailing" secondItem="8mD-6o-cRH" secondAttribute="trailing" id="wft-V7-Ty6"/>
                                 </constraints>
                             </view>
@@ -561,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U4-aK-oxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1860" y="1070.9145427286358"/>
+            <point key="canvasLocation" x="-2769" y="334"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="leX-h0-owx">
@@ -594,5 +594,8 @@
         <image name="fondo_movil" width="626" height="441"/>
         <image name="potenciar-cerebro_0.jpg" width="760" height="570"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aw4-tN-vw4"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.057371734812552644" blue="0.049410852932477378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
