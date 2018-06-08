@@ -14,8 +14,11 @@ import FirebaseDatabase
 class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,DataHolderDelegate{
     
 
-   
-
+    var sModelo:String?
+    var sEncabezado:String?
+    var sResumen:String?
+    var sTitulo:String?
+    
     
     @IBOutlet var tbMiTableView:UITableView?
     //var arCochei: [Coche] = []
@@ -94,33 +97,11 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         //let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
         //cell.lblNombre?.text=cochei.sNombre
         let celda = tableView.dequeueReusableCell(withIdentifier:"micelda1") as!TVCMiCelda
-        celda.lblNombre?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
-        celda.lblMarcaIPrincipal?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sMarca
-        
-        
-        //celda.mostrarImagen(uri: self.arcoches[indexPath.row].surl_Imagen!).................................................Ayuda
-        
-        /*
-        cell.lblNombre?.text="Yony"
-        if(indexPath.row==0){
-            cell.lblNombre?.text="Yony"
-        }
-        else if(indexPath.row==1){
-            cell.lblNombre?.text="Javi"
-        }
-        else if(indexPath.row==2){
-            cell.lblNombre?.text="Sergio"
-        }
-        else if(indexPath.row==3){
-            cell.lblNombre?.text="Sebas"
-        }
-        else if(indexPath.row==4){
-            cell.lblNombre?.text="Isak"
-        }
-             else if(indexPath.row==5){
-                cell.lblNombre?.text="Ismael"
-        }*/
-    
+        celda.lblEncabezado?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sEncabezados
+        celda.lblModeloPrincipal?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sModelo
+        celda.lblResumenPrincipal?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sResumen
+        celda.lblTituloPrincipal?.text = DataHolder.sharedInstance.arCoches[indexPath.row].sTitulo
+
         return celda
     }
    
@@ -129,7 +110,7 @@ class VCPrincipal: UIViewController,UITableViewDelegate,UITableViewDataSource,Da
         print("He selecionado la posicción: %d",indexPath.row);
         let posf = DataHolder.sharedInstance.arCoches.count
         let co = Coche()
-        co.sMarca=String(format: "Coche numero%d",posf)
+        co.sEncabezados=String(format: "Coche numero%d",posf)
         DataHolder.sharedInstance.insertarCoche(coche: co, posicion: posf)
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

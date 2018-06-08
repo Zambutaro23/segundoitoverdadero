@@ -11,16 +11,17 @@ import FirebaseStorage
 
 class TVCMiCelda: UITableViewCell {
     //COMO LO TENGO EN LA BASE DE DATOS MI PRIMER PROYECTO.
-    @IBOutlet var lblNombre:UILabel?
-    @IBOutlet var lblFabricadoIPrincipal: UILabel?
-    @IBOutlet var lblMarcaIPrincipal: UILabel?
+    @IBOutlet var lblEncabezado:UILabel?
+    @IBOutlet var lblModeloPrincipal: UILabel?
+    @IBOutlet var lblResumenPrincipal: UILabel?
     @IBOutlet var lbllatitudIPrincipal: UILabel?
     @IBOutlet var lbllongitudeIPrincipal: UILabel?
-    @IBOutlet var lblmodeloIPrincipal: UILabel?
+    @IBOutlet var lblTituloPrincipal: UILabel?
     @IBOutlet var imgvIPrincipal: UIImageView?
     
     
     var imagenDescarga:UIImage?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

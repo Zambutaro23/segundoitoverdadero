@@ -20,57 +20,55 @@ class Coche: NSObject {
     let IMAGEN = "RutaImagenP"
     let MODELO = "modelo"
     
-    var sNombre:String?
-    var sMarca:String?
-    var iFabricacion:Int?
+    var sEncabezados:String?
+    var sModelo:String?
+    var sResumen:String?
     var bdLon:Double?
     var bdLat:Double?
     var surl_Imagen:String?
-    var modelo:String?
+    var sTitulo:String?
     
     override init() {
         super.init()
-        sNombre=""
-        sMarca=""
-        iFabricacion=0
+        sEncabezados=""
+        sModelo=""
+        sResumen=""
         bdLat=0
         bdLon=0
         surl_Imagen=""
-        modelo=""
+        sTitulo=""
     }
     
     init(valores:[String:Any]) {
-        sNombre=valores["Nombre"] as?   String
-        sMarca=valores["Marca"] as? String
-        iFabricacion=valores["Fabricado"] as? Int
+        sEncabezados=valores["ENCABEZADO"] as?   String
+        sResumen=valores["INTERNACIONAL"] as? String
+        sTitulo=valores["TITULO"] as? String
         bdLat=valores["lat"] as? Double
         bdLon=valores["lon"] as? Double
-        surl_Imagen=valores["RutaImagenP"] as? String
-        modelo=valores["modelo"] as? String
+        sTitulo=valores["TITULO"] as? String
     }
     
     func getDiccionary()-> [String:AnyObject]{
         var hm:[String:AnyObject]=[:]
-        hm["Nombre"]=sNombre! as AnyObject
-        hm["Marca"]=sMarca! as AnyObject
-        hm["Fabricados"]=iFabricacion! as AnyObject
+        hm["Nombre"]=sEncabezados! as AnyObject
+        hm["Marca"]=sModelo! as AnyObject
+        hm["Fabricados"]=sResumen! as AnyObject
         hm["lat"]=bdLat! as AnyObject
         hm["lon"]=bdLon! as AnyObject
-        hm["RutaImagenP"]=sNombre! as AnyObject
-        hm["modelo"]=sNombre! as AnyObject
+        hm["RutaImagenP"]=sTitulo! as AnyObject
+       
         
         return hm;
     }
     
     func setCoche(valores:[String:Any]) {
         
-        sNombre=valores["Nombre"] as?   String
-        sMarca=valores["Marca"] as? String
-        iFabricacion=valores["Fabricado"] as? Int
+        sEncabezados=valores["ENCABEZADO"] as?   String
+        sResumen=valores["INTERNACIONAL"] as? String
+        sTitulo=valores["sTitulo"] as? String
         bdLat=valores["lat"] as? Double
         bdLon=valores["lon"] as? Double
-        surl_Imagen=valores["RutaImagenP"] as? String
-        modelo=valores["modelo"] as? String
+        
         //
         if surl_Imagen == nil{
             surl_Imagen = "gs//primer-proyecto-33c88.appspot.com/coches/Fisker-EMotion.jpg"
@@ -81,13 +79,13 @@ class Coche: NSObject {
     
     func getCoche() -> [String:Any] {
         return[
-            "NOMBRE":sNombre as Any,
-            "MARCA":sMarca as Any,
-            "FABRICADO": iFabricacion as Any,
+            "NOMBRE":sEncabezados as Any,
+            "MARCA":sResumen as Any,
+            "FABRICADO": sTitulo as Any,
             "LONGITUD": bdLon as Any,
             "LATITUD": bdLat as Any,
             "IMAGEN": surl_Imagen as Any,
-            "MODELO": modelo as Any]
+            "MODELO": sTitulo as Any]
         
         
         

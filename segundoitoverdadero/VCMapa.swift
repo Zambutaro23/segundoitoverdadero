@@ -39,7 +39,7 @@ class VCMapa: UIViewController,MKMapViewDelegate{
                         var coordTemp: CLLocationCoordinate2D = CLLocationCoordinate2D()
                         coordTemp.latitude = coche.bdLat!
                         coordTemp.longitude = coche.bdLon!
-                        self.agregarPin(coordenada: coordTemp, titulo: coche.sNombre!)
+                        self.agregarPin(coordenada: coordTemp, titulo: coche.sEncabezados!)
   
                     }
                     print("------>>>> ",DataHolder.sharedInstance.arCoches.count)
@@ -57,7 +57,7 @@ class VCMapa: UIViewController,MKMapViewDelegate{
                 var coordTemp: CLLocationCoordinate2D = CLLocationCoordinate2D()
                 coordTemp.latitude = coche.bdLat!
                 coordTemp.longitude = coche.bdLon!
-                self.agregarPin(coordenada: coordTemp, titulo: coche.sNombre!)
+                self.agregarPin(coordenada: coordTemp, titulo: coche.sEncabezados!)
             }
         }
        
