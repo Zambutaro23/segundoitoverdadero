@@ -11,12 +11,12 @@ import FirebaseStorage
 
 class TVCMiCelda: UITableViewCell {
     //COMO LO TENGO EN LA BASE DE DATOS MI PRIMER PROYECTO.
-    @IBOutlet var lblEncabezado:UILabel?
+    @IBOutlet var lblEncabezado:UILabel?//ok
     @IBOutlet var lblModeloPrincipal: UILabel?
     @IBOutlet var lblResumenPrincipal: UILabel?
     @IBOutlet var lbllatitudIPrincipal: UILabel?
     @IBOutlet var lbllongitudeIPrincipal: UILabel?
-    @IBOutlet var lblTituloPrincipal: UILabel?
+    @IBOutlet var lblTituloPrincipal: UILabel?//ok
     @IBOutlet var imgvIPrincipal: UIImageView?
     
     

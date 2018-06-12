@@ -20,7 +20,7 @@ class Coche: NSObject {
     let IMAGEN = "RutaImagenP"
     let MODELO = "modelo"
     
-    var sEncabezados:String?
+    var sEncabezados:String?//ok
     var sModelo:String?
     var sResumen:String?
     var bdLon:Double?
